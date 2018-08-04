@@ -14,7 +14,10 @@ public class CustomTerrainEditor : Editor {
     SerializedProperty perlinNoiseXScale;
     SerializedProperty PerlinNoiseYScale;
     SerializedProperty perlinOffsetX;
-    SerializedProperty PerlinOffsetY;
+    SerializedProperty perlinOffsetY;
+    SerializedProperty perlinOctaves;
+    SerializedProperty perlinPersistance;
+    SerializedProperty perlinHeightScale;
     
     bool showRandom = false;
     bool showLoadHeights = false;
@@ -28,7 +31,10 @@ public class CustomTerrainEditor : Editor {
         perlinNoiseXScale = serializedObject.FindProperty("perlinNoiseXScale");
         PerlinNoiseYScale = serializedObject.FindProperty("perlinNoiseYScale");
         perlinOffsetX = serializedObject.FindProperty("perlinOffsetX");
-        PerlinOffsetY = serializedObject.FindProperty("perlinOffsetY");
+        perlinOffsetY = serializedObject.FindProperty("perlinOffsetY");
+        perlinOctaves = serializedObject.FindProperty("perlinOctaves");
+        perlinPersistance = serializedObject.FindProperty("perlinPersistance");
+        perlinHeightScale = serializedObject.FindProperty("perlinHeightScale");
         
     }
 
@@ -71,10 +77,13 @@ public class CustomTerrainEditor : Editor {
         {
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
             GUILayout.Label("Perlin Generator", EditorStyles.boldLabel);
-            EditorGUILayout.Slider(perlinNoiseXScale, 0, 0.05f, new GUIContent("X Scale"));
-            EditorGUILayout.Slider(PerlinNoiseYScale, 0, 0.05f, new GUIContent("Y Scale"));
+            EditorGUILayout.Slider(perlinNoiseXScale, 0f, 0.05f, new GUIContent("X Scale"));
+            EditorGUILayout.Slider(PerlinNoiseYScale, 0f, 0.05f, new GUIContent("Y Scale"));
             EditorGUILayout.IntSlider(perlinOffsetX, 0, 10000, new GUIContent("X Offset"));
-            EditorGUILayout.IntSlider(PerlinOffsetY, 0, 10000, new GUIContent("Y Offset"));
+            EditorGUILayout.IntSlider(perlinOffsetY, 0, 10000, new GUIContent("Y Offset"));
+            EditorGUILayout.IntSlider(perlinOctaves, 0, 50, new GUIContent("Brownian Octaves"));
+            EditorGUILayout.Slider(perlinPersistance, 0.1f, 20f, new GUIContent("Brownian Persistance"));
+            EditorGUILayout.Slider(perlinHeightScale, 0f, 1f, new GUIContent("Height Scale"));
             if (GUILayout.Button("Run Generator"))
             {
                 terrain.PerlinNoise();

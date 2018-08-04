@@ -338,10 +338,13 @@ MonoBehaviour:
   randomHeightRange: {x: 0, y: 0.005}
   heightMapImage: {fileID: 2800000, guid: 089e2b73cb2ab4f4db63dd05d7b13c02, type: 3}
   heightMapScale: {x: 2, y: 0.15, z: 2}
-  perlinNoiseXScale: 0.0022
-  perlinNoiseYScale: 0.0028
-  perlinOffsetX: 940
-  perlinOffsetY: 3208
+  perlinNoiseXScale: 0.0001
+  perlinNoiseYScale: 0.0001
+  perlinOffsetX: 8141
+  perlinOffsetY: 2389
+  perlinOctaves: 7
+  perlinPersistance: 2.64
+  perlinHeightScale: 0.602
   terrain: {fileID: 1414353332}
   terrainData: {fileID: 15600000, guid: 3b156265c2f0fca499c4d285e7726fdd, type: 2}
 --- !u!1 &1609077935

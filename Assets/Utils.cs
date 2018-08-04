@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Utils  {
 
-    public static float fBM(float x, float y, int oct, float persistance, int offsetX, int offsetY)
+    public static float fBM(float x, float y, int oct, float persistance)
     {
         float total = 0;
         float frequency = 1;
@@ -13,7 +13,7 @@ public static class Utils  {
 
         for(int i = 0; i < oct; i++)
         {
-            total += Mathf.PerlinNoise((x + offsetX) * frequency, (y + offsetY) * frequency) * amplitude;
+            total += Mathf.PerlinNoise(x * frequency, y * frequency) * amplitude;
             maxValue += amplitude;
             amplitude *= persistance;
             frequency *= 2;
