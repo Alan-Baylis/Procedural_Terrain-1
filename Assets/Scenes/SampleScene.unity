@@ -346,6 +346,12 @@ MonoBehaviour:
   perlinOctaves: 7
   perlinPersistance: 2.64
   perlinHeightScale: 0.602
+  voronoiFallOff: 0.53
+  voronoiDropOff: 1
+  voronoiMinHeight: 0.15
+  voronoiMaxHeight: 0.381
+  voronoiPeakCount: 10
+  voronoiType: 2
   perlinParameters:
   - mPerlinNoiseXScale: 0.01
     mPerlinNoiseYScale: 0.01
